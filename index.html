@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php include('Logic.php'); ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five-Letter Wordle Game</title>
+
+    <!--Styling for the html landing page-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        form {
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .feedback {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .previous-guesses {
+            margin-top: 20px;
+        }
+        .previous-guesses ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .previous-guesses ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!--Landing Page for the Wordle Game-->
+    <div style="text-align: center; margin-top: 20px;">
+        <h1>Five-Letter Wordle Game</h1>
+        <p>Guess the five-letter word!</p>
+        <!--Redirection to the Logic.php code with submission-->
+        <form action="Logic.php" method="post">
+            <label for="guess">Enter your guess:</label><br>
+            <!--User can type their guess and will be limited to only 5 characters-->
+            <!--User can only type letters and not numbers or special characters else will face error-->
+            <input type="text" id="guess" name="guess" maxlength="5" pattern="[A-Za-z]{5}" required autofocus style="margin-bottom: 10px;"><br>
+            <input type="submit" value="Submit Guess">
+            <p>Made by Hemanth Peddapatla</p>
+        </form>
+    </div>
+</body>
+</html>
